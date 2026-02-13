@@ -8,7 +8,15 @@ def jogarForca():
     enforcou = False
     acertou = False
 
-    palavra = "Abacate".lower()
+    dicionario = open("dicionario.txt", "r")
+    todasAsPalavras = []
+
+    for linha in dicionario:
+        todasAsPalavras.append(linha.strip())
+    dicionario.close()
+
+    palavra = todasAsPalavras[random.randrange(0, len(todasAsPalavras))].lower()
+    
     letrasEscolhidas = []
     qntDeErros = 0
 
